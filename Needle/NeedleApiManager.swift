@@ -14,7 +14,7 @@ import Locksmith
 class NeedleApiManager
 {
     static let sharedInstance = NeedleApiManager()
-    static let apiPath = "http://localhost:8000/api"
+    static let apiPath = "http://pro.needleapp.fr/api"
     static let photoPath = "http://pro.needleapp.fr"
     
     var OAuthTokenCompletionHandler:(NSError? -> Void)?

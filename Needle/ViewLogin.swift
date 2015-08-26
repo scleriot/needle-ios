@@ -29,6 +29,9 @@ class ViewLogin: UIViewController {
     }
     
     @IBAction func login(sender: UIBarButtonItem) {
+        let progressHUD = ProgressHUD(text: "Connexion en cours...")
+        self.view.addSubview(progressHUD)
+        
         NeedleApiManager.sharedInstance.startOAuth2Login(emailField.text, password: passwordField.text,
             successCallback: {
                 if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("curatedView") as? UIViewController

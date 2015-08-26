@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
 class ArticleModel {
     var id: Int?
@@ -73,16 +74,57 @@ class ArticleModel {
         }
     }
     
-    
+    static var manager: OneShotLocationManager?
     static func getArticles(callback:(articles:[ArticleModel])->Void )
     {
-        let apiPath = "\(NeedleApiManager.apiPath)/articles/user_recommendation"
-        let parameters = [
-            "latitude": 0,
-            "longitude": 0
-        ]
-
-        NeedleApiManager.sharedInstance.alamofireManager().request(.GET, apiPath, parameters: parameters)
+        manager = OneShotLocationManager()
+        manager!.fetchWithCompletion {location, error in
+            self.manager = nil
+            // fetch location or an error
+            if let currentLocation = location {
+                let apiPath = "\(NeedleApiManager.apiPath)/articles/user_recommendation"
+                let parameters = [
+                    "latitude": currentLocation.coordinate.latitude,
+                    "longitude": currentLocation.coordinate.longitude
+                ]
+                
+                NeedleApiManager.sharedInstance.alamofireManager().request(.GET, apiPath, parameters: parameters)
+                    .responseJSON { _, _, data, error in
+                        if let data: AnyObject = data {
+                            let result = JSON(data)
+                            var articles = [ArticleModel]()
+                            for (index: String, item: JSON) in result {
+                                var a = ArticleModel()
+                                a.id = item["id"].int
+                                a.price = item["price"].float
+                                a.priceDiscount = item["price_discount"].float
+                                a.photo = item["photo"].string
+                                a.title = item["title"].string
+                                a.description = item["description"].string
+                                a.distance = item["distance"].double
+                                
+                                a.companyName = item["company_name"].string
+                                a.companyLogo = item["company_logo"].string
+                                a.companyPhone = item["company_phone"].string
+                                a.companyAddress = item["company_address"].string
+                                
+                                articles.append(a)
+                            }
+                            
+                            callback(articles: articles)
+                        }
+                }
+            } else if let err = error {
+                println(err.localizedDescription)
+            }
+        }
+    }
+    
+    static func getCloset(callback:(articles:[ArticleModel])->Void )
+    {
+        let apiPath = "\(NeedleApiManager.apiPath)/accounts/liked"
+        
+        NeedleApiManager.sharedInstance.alamofireManager().request(.GET, apiPath)
             .responseJSON { _, _, data, error in
                 if let data: AnyObject = data {
                     let result = JSON(data)
@@ -95,7 +137,6 @@ class ArticleModel {
                         a.photo = item["photo"].string
                         a.title = item["title"].string
                         a.description = item["description"].string
-                        a.distance = item["distance"].double
                         
                         a.companyName = item["company_name"].string
                         a.companyLogo = item["company_logo"].string
@@ -107,8 +148,7 @@ class ArticleModel {
                     
                     callback(articles: articles)
                 }
-            }
+        }
     }
-    
-    
+
 }

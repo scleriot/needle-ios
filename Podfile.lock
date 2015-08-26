@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (1.3.1)
+  - JLToast (1.2.5)
+  - Koloda (1.1.2):
+    - pop (~> 1.0)
+  - Locksmith (1.2.2)
+  - pop (1.0.7)
+  - SwiftyJSON (2.2.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 1.3)
+  - JLToast
+  - Koloda
+  - Locksmith
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
+  JLToast: ad061dadb49580b86b47535b869390aab0c6a03b
+  Koloda: 19b54bfb56c3b9e4e946c750b1c3bc771298d7ca
+  Locksmith: c84c10bf23f99e6d04703dba65065dc38b038d88
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
+
+COCOAPODS: 0.38.2

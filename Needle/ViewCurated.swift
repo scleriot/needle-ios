@@ -17,12 +17,15 @@ class ViewCurated: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
     var articles = [ArticleModel]()
     var indexForSegue = -1
     
+    let progressHUD = ProgressHUD(text: "Chargement en cours...")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
+        self.view.addSubview(progressHUD)
         loadArticles()
     }
     
@@ -30,6 +33,7 @@ class ViewCurated: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
         ArticleModel.getArticles() { articles in
             self.articles.extend(articles)
             self.kolodaView.reloadData()
+            self.progressHUD.removeFromSuperview()
         }
     }
     
