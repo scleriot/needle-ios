@@ -244,6 +244,7 @@
                         <outlet property="emailField" destination="bd6-Ca-Nr0" id="fRW-gQ-CGQ"/>
                         <outlet property="helpText" destination="Xf0-Xq-mH0" id="yKp-LY-rDC"/>
                         <outlet property="passwordField" destination="8t8-Ty-CGY" id="ATV-gd-lCm"/>
+                        <outlet property="signupSwitch" destination="skL-ci-0vR" id="5LI-59-yVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lap-S0-QGB" userLabel="First Responder" sceneMemberID="firstResponder"/>

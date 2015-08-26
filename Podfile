@@ -7,3 +7,6 @@ pod 'SwiftyJSON'
 pod 'JLToast'
 pod 'Locksmith'
 pod "Koloda"
+
+pod 'Fabric'
+pod 'Crashlytics'

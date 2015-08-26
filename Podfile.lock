@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (1.3.1)
+  - Crashlytics (3.1.1)
+  - Fabric (1.4.0):
+    - Fabric/Base (= 1.4.0)
+  - Fabric/Base (1.4.0)
   - JLToast (1.2.5)
   - Koloda (1.1.2):
     - pop (~> 1.0)
@@ -9,6 +13,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 1.3)
+  - Crashlytics
+  - Fabric
   - JLToast
   - Koloda
   - Locksmith
@@ -16,6 +22,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
+  Crashlytics: 39ab395565bc03c29cdecd2b9d103ebf30930c10
+  Fabric: 6d1d1c1eaf7ebc76fc3307e2c0259456411baf26
   JLToast: ad061dadb49580b86b47535b869390aab0c6a03b
   Koloda: 19b54bfb56c3b9e4e946c750b1c3bc771298d7ca
   Locksmith: c84c10bf23f99e6d04703dba65065dc38b038d88

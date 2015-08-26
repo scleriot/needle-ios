@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		660C5B4A1B8C67FA00586A11 /* ViewPenderie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C5B491B8C67FA00586A11 /* ViewPenderie.swift */; };
+		662BAF161B8E11B60017CECE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BAF151B8E11B60017CECE /* Account.swift */; };
 		665411D41B8BF88100640388 /* KolodaCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 665411D31B8BF88100640388 /* KolodaCustomView.xib */; };
 		665411D61B8BF9A400640388 /* KolodaCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665411D51B8BF9A400640388 /* KolodaCustomView.swift */; };
 		665411D91B8C289300640388 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665411D81B8C289300640388 /* ArticleModel.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		5CD010EB0F85308A319F22FA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		660C5B491B8C67FA00586A11 /* ViewPenderie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPenderie.swift; sourceTree = "<group>"; };
+		662BAF151B8E11B60017CECE /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		665411D31B8BF88100640388 /* KolodaCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KolodaCustomView.xib; sourceTree = "<group>"; };
 		665411D51B8BF9A400640388 /* KolodaCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaCustomView.swift; sourceTree = "<group>"; };
 		665411D81B8C289300640388 /* ArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				665411D81B8C289300640388 /* ArticleModel.swift */,
+				662BAF151B8E11B60017CECE /* Account.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				66BA2FC91B8303EB00308CDE /* Resources */,
 				449FF8BB5117E0C4BD2BC667 /* Embed Pods Frameworks */,
 				2B225C9197C74F721FDBFB80 /* Copy Pods Resources */,
+				662BAF141B8E108D0017CECE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -339,6 +343,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		662BAF141B8E108D0017CECE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" 6f29cbe3518ba2ecfe6751ac1a353f653667e325 fb7564edbba44061155d26126ef96cd19bded5e85ea33277434d1f514aa0a76b";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,6 +376,7 @@
 				66BA2FD11B8303EB00308CDE /* AppDelegate.swift in Sources */,
 				667F5F5D1B8D8E900097F383 /* CustomCellViewPenderie.swift in Sources */,
 				66B9B91F1B8B15B300C9CD20 /* NeedleApiManager.swift in Sources */,
+				662BAF161B8E11B60017CECE /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,8 +19,8 @@ class NeedleApiManager
     
     var OAuthTokenCompletionHandler:(NSError? -> Void)?
     
-    var clientID = "dev"
-    var clientSecret = "secret"
+    static var clientID = "dev"
+    static var clientSecret = "secret"
     
     var OAuthToken: String? {
         set {
@@ -111,7 +111,7 @@ class NeedleApiManager
     
     func startOAuth2Login(username: String, password: String, successCallback: ()->(), errorCallback: ()->() )
     {
-        let authHeader = "\(self.clientID):\(self.clientSecret)"
+        let authHeader = "\(NeedleApiManager.clientID):\(NeedleApiManager.clientSecret)"
         let utf8str = authHeader.dataUsingEncoding(NSUTF8StringEncoding)
         if let base64Encoded = utf8str?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
         {
@@ -155,7 +155,7 @@ class NeedleApiManager
     
     func refreshOAuth2Token(successCallback: ()->()) {
         if let refresh_token = self.OAuthRefreshToken {
-            let authHeader = "\(self.clientID):\(self.clientSecret)"
+            let authHeader = "\(NeedleApiManager.clientID):\(NeedleApiManager.clientSecret)"
             let utf8str = authHeader.dataUsingEncoding(NSUTF8StringEncoding)
             if let base64Encoded = utf8str?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
             {
