@@ -15,6 +15,7 @@ class ViewPenderie: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     var articles = [ArticleModel]()
     let progressHUD = ProgressHUD(text: "Chargement en cours...")
+    var indexForSegue: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,10 @@ class ViewPenderie: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -38,6 +43,15 @@ class ViewPenderie: UIViewController, UITableViewDelegate, UITableViewDataSource
                 self.progressHUD.removeFromSuperview()
             })
         }
+    }
+    
+    @IBAction func goShopping(sender: UIButton) {
+        var confirmAlert = UIAlertController(title: "Go Shopping !", message: "Sélectionnez dans la liste l'article que vous souhaitez aller acheter, vous obtiendrez alors plus d'informations sur le magasin !", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        confirmAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        presentViewController(confirmAlert, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,8 +68,10 @@ class ViewPenderie: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        tableView.cellForRowAtIndexPath(indexPath)?.layoutSubviews()
-
+        tableView.layoutSubviews()
+        
+        indexForSegue = indexPath.row
+        self.performSegueWithIdentifier("storedetails", sender: self)
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -65,6 +81,12 @@ class ViewPenderie: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let destinationVC = segue.destinationViewController as! ViewStore
+        destinationVC.article = articles[indexForSegue!]
+        destinationVC.hidesBottomBarWhenPushed = true
     }
 }
 

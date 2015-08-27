@@ -20,6 +20,7 @@
 		668493901B8B69AC00B0696A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6684938F1B8B69AC00B0696A /* Pods.framework */; };
 		668493921B8B6CBA00B0696A /* UIImageView-AFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668493911B8B6CBA00B0696A /* UIImageView-AFNetworking.swift */; };
 		6692C3991B8B58CE0021F4A1 /* ViewCurated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692C3981B8B58CE0021F4A1 /* ViewCurated.swift */; };
+		66959D471B8EC7640098D68F /* ViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66959D461B8EC7640098D68F /* ViewStore.swift */; };
 		66B9B91F1B8B15B300C9CD20 /* NeedleApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9B91E1B8B15B300C9CD20 /* NeedleApiManager.swift */; };
 		66BA2FD11B8303EB00308CDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA2FD01B8303EB00308CDE /* AppDelegate.swift */; };
 		66BA2FD31B8303EB00308CDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA2FD21B8303EB00308CDE /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		6684938F1B8B69AC00B0696A /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		668493911B8B6CBA00B0696A /* UIImageView-AFNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView-AFNetworking.swift"; sourceTree = "<group>"; };
 		6692C3981B8B58CE0021F4A1 /* ViewCurated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCurated.swift; sourceTree = "<group>"; };
+		66959D461B8EC7640098D68F /* ViewStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStore.swift; sourceTree = "<group>"; };
 		66B9B91E1B8B15B300C9CD20 /* NeedleApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleApiManager.swift; sourceTree = "<group>"; };
 		66BA2FCB1B8303EB00308CDE /* Needle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Needle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66BA2FCF1B8303EB00308CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				6692C3981B8B58CE0021F4A1 /* ViewCurated.swift */,
 				665411DC1B8C4F2200640388 /* ViewDetails.swift */,
 				660C5B491B8C67FA00586A11 /* ViewPenderie.swift */,
+				66959D461B8EC7640098D68F /* ViewStore.swift */,
 			);
 			path = Needle;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			files = (
 				667F5F611B8DAF690097F383 /* OneShotLocationManager.swift in Sources */,
 				66BA2FD31B8303EB00308CDE /* ViewController.swift in Sources */,
+				66959D471B8EC7640098D68F /* ViewStore.swift in Sources */,
 				66BA2FF11B83049600308CDE /* ViewLogin.swift in Sources */,
 				667F5F5F1B8DA9030097F383 /* ProgressHUD.swift in Sources */,
 				665411DD1B8C4F2200640388 /* ViewDetails.swift in Sources */,
