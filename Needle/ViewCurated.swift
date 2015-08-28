@@ -108,9 +108,6 @@ class ViewCurated: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
         return nil
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let destinationVC = segue.destinationViewController as! ViewDetails
-        destinationVC.article = articles[indexForSegue]
-    }
+    quic
 }
 
